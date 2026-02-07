@@ -104,7 +104,7 @@ class Ui_MainWindow(object):
         self.Main_Page = QtWidgets.QWidget()
         self.Main_Page.setObjectName("Main_Page")
         self.TimerButton = QtWidgets.QPushButton(self.Main_Page)
-        self.TimerButton.setGeometry(QtCore.QRect(130, 320, 131, 51))
+        self.TimerButton.setGeometry(QtCore.QRect(140, 320, 131, 51))
         self.TimerButton.setObjectName("TimerButton")
         self.stackedWidget.addWidget(self.Main_Page)
         self.Settings_Page = QtWidgets.QWidget()
@@ -155,7 +155,7 @@ class Ui_MainWindow(object):
         self.CyclesLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.CyclesLabel.setObjectName("CyclesLabel")
         self.ApplyButton = QtWidgets.QPushButton(self.Settings_Page)
-        self.ApplyButton.setGeometry(QtCore.QRect(130, 320, 131, 51))
+        self.ApplyButton.setGeometry(QtCore.QRect(130, 330, 131, 61))
         self.ApplyButton.setObjectName("ApplyButton")
         self.stackedWidget.addWidget(self.Settings_Page)
         self.VerticalLayout.addWidget(self.stackedWidget)
@@ -189,34 +189,6 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         self.stackedWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
-        button_style = """
-        QPushButton {
-            background-color: #F54242;
-            color: white;
-            border: none;
-            border-radius: 14px;
-            padding: 12px 24px;
-            font-size: 16px;
-            font-weight: 500;
-        }
-
-        QPushButton:hover {
-            background-color: #E23A3A;
-        }
-
-        QPushButton:pressed {
-            background-color: #C83232;
-        }
-
-        QPushButton:disabled {
-            background-color: #B0B0B0;
-            color: #E0E0E0;
-        }
-        """
-
-        self.TimerButton.setStyleSheet(button_style)
-        self.ApplyButton.setStyleSheet(button_style)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
