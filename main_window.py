@@ -93,6 +93,11 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
+        self.centralwidget.setStyleSheet("""
+        QWidget {
+            background-color: #FAFAFA;
+        }
+        """)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 391, 451))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.VerticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
@@ -192,31 +197,47 @@ class Ui_MainWindow(object):
 
         button_style = """
         QPushButton {
-            background-color: #F54242;
-            color: white;
+            background-color: #C63636;
+            color: #FFFFFF;
             border: none;
             border-radius: 14px;
-            padding: 12px 24px;
-            font-size: 16px;
+            padding-top: 8px;
+            padding-bottom: 12px;
+            padding-left: 26px;
+            padding-right: 26px;
+            font-size: 20px;
             font-weight: 500;
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
         }
 
         QPushButton:hover {
-            background-color: #E23A3A;
+            background-color: #D64545;
         }
 
         QPushButton:pressed {
-            background-color: #C83232;
+            background-color: #A92B2B;
         }
 
         QPushButton:disabled {
-            background-color: #B0B0B0;
-            color: #E0E0E0;
+            background-color: #D0D0D0;
+            color: #9A9A9A;
         }
         """
 
         self.TimerButton.setStyleSheet(button_style)
         self.ApplyButton.setStyleSheet(button_style)
+
+        label_style = """
+        QLabel {
+            color: #2E2E2E;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        """
+        self.WorkTimeLabel.setStyleSheet(label_style)
+        self.ShortBreakLabel.setStyleSheet(label_style)
+        self.LongBreakLabel.setStyleSheet(label_style)
+        self.CyclesLabel.setStyleSheet(label_style)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
