@@ -84,7 +84,8 @@ class CircleTimer(QWidget):
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(392, 471)
+        MainWindow.setFixedSize(392, 420)
+        self.setWindowFlags(Qt.FramelessWindowHint)
         icon = QtGui.QIcon()
         # Получаем путь до .ico файла относительно текущего скрипта
         icon_path = os.path.join(os.path.dirname(__file__), "icon.ico")
@@ -175,9 +176,6 @@ class Ui_MainWindow(object):
         self.menuHelp = QtWidgets.QMenu(self.menubar)
         self.menuHelp.setObjectName("menuHelp")
         MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
         self.actionThemes = QtWidgets.QAction(MainWindow)
         self.actionThemes.setObjectName("actionThemes")
         self.actionLight = QtWidgets.QAction(MainWindow)
@@ -238,6 +236,20 @@ class Ui_MainWindow(object):
         self.ShortBreakLabel.setStyleSheet(label_style)
         self.LongBreakLabel.setStyleSheet(label_style)
         self.CyclesLabel.setStyleSheet(label_style)
+
+        self.CloseButton = QtWidgets.QPushButton("✕", self.centralwidget)
+        self.CloseButton.setGeometry(350, 10, 32, 32)
+        self.CloseButton.setStyleSheet("""
+        QPushButton {
+            background: transparent;
+            border: none;
+            font-size: 18px;
+        }
+        QPushButton:hover {
+            color: #C63636;
+        }
+        """)
+        self.CloseButton.clicked.connect(self.close)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate

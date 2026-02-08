@@ -45,6 +45,16 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.update_labels()
 
+    def mousePressEvent(self, event):
+        if event.button() == Qt.LeftButton:
+            self._drag_pos = event.globalPos() - self.frameGeometry().topLeft()
+            event.accept()
+
+
+    def mouseMoveEvent(self, event):
+        if event.buttons() == Qt.LeftButton:
+            self.move(event.globalPos() - self._drag_pos)
+            event.accept()
 
     # === Переключение на страницу настроек ===
     def open_settings_page(self):
