@@ -17,17 +17,6 @@ class Ui_MainWindow(object):
         MainWindow.setFixedSize(392, 420)
         MainWindow.setWindowFlags(QtCore.Qt.FramelessWindowHint)
 
-        icon = QtGui.QIcon()
-        icon_path = os.path.normpath(
-            os.path.join(os.path.dirname(__file__), "..", "icon.ico")
-        )
-        icon.addPixmap(
-            QtGui.QPixmap(icon_path),
-            QtGui.QIcon.Normal,
-            QtGui.QIcon.Off
-        )
-        MainWindow.setWindowIcon(icon)
-
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.centralwidget.setStyleSheet("""

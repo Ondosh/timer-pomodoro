@@ -1,5 +1,5 @@
 import sys
-from PyQt5 import QtCore, QtWidgets
+from PyQt5 import QtCore, QtWidgets, QtGui
 
 from main_controller import MainController
 from pomodoro_state import PomodoroState
@@ -44,6 +44,10 @@ class MainWindow(QtWidgets.QMainWindow):
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
+
+    icon = QtGui.QIcon("icon.ico")
+    app.setWindowIcon(icon)
+
     window = MainWindow()
     window.show()
     sys.exit(app.exec_())
